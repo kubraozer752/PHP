@@ -1,0 +1,14 @@
+<?php 
+function ucgen($sayi){
+
+for ($l = 0; $l <= $sayi; $l++) {
+    $i = 0; 
+    while ($i <= $l){
+        echo "0". " ";
+        $i++;
+    }
+    echo "<br>";
+}
+}
+echo ucgen(15);
+?>
