@@ -1,0 +1,20 @@
+<?php 
+$planets = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune", "", "", NULL];
+    
+function xx ($array, $sayi){
+    $arr= array_filter($array, function($e) {
+        if ($e == true) {
+            return $e;
+        }
+    });
+      $arr2 = array_rand($arr, $sayi);
+          $arr3 = array_map(function($index) use ($array){
+             return $array[$index];
+          }, $arr2);
+              print_r($arr3);
+}
+print_r(xx($planets, 2));
+print_r(xx($planets, 3));
+print_r(xx($planets, 4));
+print_r(xx($planets, 5));
+?>
