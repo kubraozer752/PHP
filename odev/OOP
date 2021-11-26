@@ -1,0 +1,77 @@
+<?php
+
+interface sekil
+{
+    public function cevre();
+    public function alan();
+    
+}
+
+class kare implements sekil
+{
+    public $kenar;
+    public function cevre()
+    {
+        return $this->kenar*4;
+    }
+    public function alan()
+    {
+        return $this->kenar*2;
+    }
+}
+
+class dikdortgen implements sekil
+{
+    public $kenar1;
+    public $kenar2;
+
+    public function cevre()
+    {
+        return ($this->kenar1*2)+($this->kenar2*2);
+    }
+    public function alan()
+    {
+        return $this->kenar1 * $this->kenar2;
+    }
+}
+
+class ucgen implements sekil
+{
+    public $kenar1;
+    public $kenar2;
+    public $taban;
+    public $yukseklik;
+
+    public function cevre()
+    {
+        return $this->kenar1 + $this->kenar2 + $this->taban;
+        
+    }
+    public function alan()
+    {
+        return ($this->taban * $this->yukseklik) / 2;
+    }
+}
+
+$kare = new kare();
+$dikdortgen = new dikdortgen();
+$ucgen = new ucgen();
+
+$kare->kenar = 2;
+echo $kare->cevre()."<br>";
+echo $kare->alan()."<br>";
+
+$dikdortgen->kenar1 =3;
+$dikdortgen->kenar2 =4;
+echo $dikdortgen->cevre()."<br>";
+echo $dikdortgen->alan()."<br>";
+
+$ucgen->kenar1 =5;
+$ucgen->kenar2 =6;
+$ucgen->taban =7;
+$ucgen->yukseklik =8;
+echo $ucgen->cevre()."<br>";
+echo $ucgen->alan()."<br>";
+
+?>
+
